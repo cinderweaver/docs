@@ -39,7 +39,7 @@ To get your first pattern up and spawning, follow these simple steps.
 ### Step 2: Adding your chains
 
 <AccordionGroup>
-  <Accordion title="Grid and Adding Chains" icon="github">
+  <Accordion title="Grid and Adding Chains" icon="link">
     1. In the details panel is a single variable, this is the size of your grid, it can only be an odd number, right now, it's capped between 3 and 21. Consider changing it before drawing your pattern. The top bar of buttons has a refresh button, hit it after you decide on a grid size, the default 7 tends to work quite well.
     2. At the top left of the editor, there's a button for adding new chains, "\+ Add Chain."
     3. Clicking it brings up the dialog to select details about it. You need to select a Chain Tag, a Chain Shape Type and a Chain Color.
@@ -51,7 +51,7 @@ To get your first pattern up and spawning, follow these simple steps.
 
 ### Step 3: Drawing your pattern
 
-<Accordion title="Drawing in GridCast" icon="rocket">
+<Accordion title="Drawing in GridCast" icon="brush">
   1. There's a drop down at the top to select a chain, if you just added a new chain, the first chain in the pattern will be selected automatically, use this to select between different chains if you have multiple ones in your pattern.
   2. After selecting a current chain, the input for drawing a shape depends on the shape type you pick. If you chain is of circle type, simply click any of the cells on the grid and a circle should appear there. Clicking again would remove the circle. This is how you draw for circle shaped patterns.
   3. If you chose Line as a shape, clicking a cell will first select the starting point of the line, clicking another cell will form a line pointing in it's direction. If you've already clicked to select a starting cell and then you click the starting cell again, it will cancel the line. If you want to remove a particular line, just click it's start cell and then the end cell. Basically draw it again on top of itself and it will be removed.
@@ -62,8 +62,19 @@ To get your first pattern up and spawning, follow these simple steps.
 
 ### Step 4: Testing your pattern
 
-<Accordion title="Setup everything to spawn you pattern in the world" icon="chart-column">
-  
+<Accordion title="Setup everything to spawn your pattern in the world" icon="wrench">
+   1. Depending on what you want to be using this pattern, you want to add the GameplayTask component on that actor. For testing purposes, the default ThirdPerson blueprint character should be fine but you can also add it to your own player character if you have one.
+   2. In the Event-graph, right click-\> "Execute GridCast." It's a gameplay task implemented specifically to handle the delay and everything else about the Pattern you have just drawn in a single node itself.
+   3. You can configure the node however you wish, every parameter has as tooltip that explains what it does.
+   4. It's an Async Gameplay Task, there's three 4 execution pins on the other side of the node. The top pin just continues execution once the task starts.
+   5. PreExecute is what it sounds like, it'll fire at the start of the delay. It can be used to spawn telegraphs for the AoE effects, etc.
+   6. Execute fires at the end of the delay, this is where you can do your gameplay logic like doing hit detection, dealing damage, spawning addtional things, etc.
+   7. To make processing of data easier for users, there's a delegate based workflow that will neatly organize each of those steps and let you isolate each of those things separately based on the type of the shape.
+   8. In the Event-graph, right click-\> "Process Grid Cast Output Chains." It's a node that was added specifically to solve the problem of having to manually loop through your pattern steps. The ideal way to work with it is to drag a pin from the red delegate pins and then search for "Create Event." A green node with a dropdown will come up.
+   9. In the drop down, click the option for "Create Matching Function." Rename the function appropriately.
+  10. Repeat that one time each for both PreExecute and Execute pins.
+  11. Inside these newly created functions, you can spawn VFX, do hit detection, deal damage, anything you really want to do.
+  12. Once you are down, you should be able to test the pattern by either using a debug input key or spawning it with any other methods.
 </Accordion>
 
 ## Next steps
@@ -71,17 +82,17 @@ To get your first pattern up and spawning, follow these simple steps.
 Now that you have your docs running, explore these key features:
 
 <CardGroup cols={2}>
-  <Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-    Learn MDX syntax and start writing your documentation.
+  <Card title="GridCast Editor" icon="pen-to-square" href="/essentials/markdown">
+    Learn everything about the custom GridCast Editor that is used to make patterns.
   </Card>
-  <Card title="Customize style" icon="palette" href="/essentials/settings">
-    Make your docs match your brand perfectly.
+  <Card title="GridCast Processing Types" icon="microchip" href="/essentials/settings">
+    Detailed explaination of the different processing types.
   </Card>
-  <Card title="Add code examples" icon="square-code" href="/essentials/code">
-    Include syntax-highlighted code blocks.
+  <Card title="GridCast Execution Types" icon="barcode" href="/essentials/code">
+    Information on how different execution types work.
   </Card>
-  <Card title="API documentation" icon="code" href="/api-reference/introduction">
-    Auto-generate API docs from OpenAPI specs.
+  <Card title="GridCast Shape Types" icon="circle" href="/api-reference/introduction">
+    Information about the different shape types, structs that make them up and more.
   </Card>
 </CardGroup>
 
