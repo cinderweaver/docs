@@ -1,0 +1,22 @@
+---
+title: "GridCast Processing Types"
+description: "There's three different ways to process a pattern asset with the GameplayTask. This part is one of the more complex parts of the plugin."
+icon: "recycle"
+---
+
+## 1. Link parallel.
+
+This is the first one and the default option. It's also the most confusing one to understand but this little section should make it clear as to how the whole thing works. The name in literal sense describes this mode of processing. The simplest way to understand it is to separate the context of it being used in to single-chain pattern and multi-chain patterns.
+
+1. Singe Chain Pattern: This is where each link will happen after the set delay if you are using the delay based execution type. This is your standard, 1 AoE after another with a short delay between them.
+2. Multi-chain Pattern: Now this is where it gets a little interesting. When you have multiple chains, each link in each of the chains is paired up based on their index in the chain. While using this method, each chain's orderof authoring matters. The order you put down links of a chain in a pattern asset is the order they execute in when using Link Parallel.
+
+## 2. Chain Sequential
+
+This one is simpler than Link Parallel, again, single-chain and multi-chain patterns will look a bit different when they execute but at core they are the same. Chain Sequential just means that the order you added the Chains in is the order they get processed in.\
+\
+Key difference between this and Link Parallel is that, instead of link by link, it's Chain by chain so all the links in a single chain execute at once\! One whole chain after another.
+
+## 3. Full Burst
+
+The simplest method of processing the chain, it's full burst. It just means everything happens at once, at the same time, this method is likely not going to be use as frequently as others but it does have it's use in simple single-chain patterns like Cross or rows of lines.

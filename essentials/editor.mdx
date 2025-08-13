@@ -1,0 +1,31 @@
+---
+title: "GridCast Editor"
+description: "The custom editor was built to make authoring patterns as simple as possible. It's the core and most powerful feature of the plugin."
+icon: "code"
+---
+
+## Button-row
+
+All the really important and useful things about the editor are at the top, part of the default button-row.
+
+## Add Chains
+
+This is the button you press when you want to add a new chain to your pattern.
+
+## Refresh Grid
+
+By default, all drawning for slate which is what makes the editor windows, happens on tick and I didn't like the idea of doing a lot of heavy math on tick so I am cache data and only making updates when necessary.\
+\
+A side effect of this approach is that when you move the Grid Editor around or change GridSize, you have to manually hit this Refresh Grid button to refresh the grid. It's a good workflow habit to decide your grid size before you do anything else.
+
+## Current Chain Selection
+
+This dropdown uses the GameplayTags that you specify to identify a chain in a list to let you pick which chain should be currently edited.
+
+## Clear Current Chain
+
+Want to empty the current chain completely? Just click this button and it'll be reset.
+
+## Clear All Chains
+
+Does that Clear Current Chain does but for all the chains at once, very handy if you want to completely start over or if you are copy pasting your patterns after adding the chain and just want to change what the pattern looks like.

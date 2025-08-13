@@ -1,0 +1,18 @@
+---
+title: "GridCast Execution Types"
+description: "There are two different types of Execution for the GameplayTasks that GridCast comes with."
+icon: "text-size"
+---
+
+## Delay Based
+
+This is the default execution types and more often than not, this would be the one that you use the most. It is a fairly simple method too and is sure to fit most of your needs. On the GameplayTask, there's an input for "Delay," the value you put in there will be the delay between the execution of each step of the pattern.
+
+To keep the task as efficient as possible, internally, it uses a timer for the delay. This meant making a few exceptions like not having per link delay but it should still be possible to have that and all kinds of other behavior by getting a little creative with the options that are provided.
+
+## Explicit Execution
+
+This is the second execution type. It was developed to give precise control over when the pre-execute and execute steps of a pattern should happen. To make use of this, set the execution type to Explicit and then, promote the reference to the task into a variable. Now, you can call two BlueprintCallable functions on the task.
+
+1. Pre-execute Next Step: This function prepares process things and also broadcasts through the "On PreExecute" pin. It's perfect of spawning telegraphs and everything like that.
+2. Execute Next Step: Does what it says, it makes the "On Execute" pin broadcast with data.
