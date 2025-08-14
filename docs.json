@@ -4,9 +4,10 @@
     "name": "GridCast Documentation",
     "colors": {
         "primary": "#9CA3AF",
-        "light": "#F97F51",
-        "dark": "#1F2937"
+        "light": "#1F2937",
+        "dark": "#F97F51"
     },
+    "darkMode": true,
     "favicon": "/favicon.svg",
     "navigation": {
         "groups": [
