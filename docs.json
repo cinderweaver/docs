@@ -8,7 +8,7 @@
         "dark": "#1F2937"
     },
     "darkMode": true,
-    "favicon": "/GridCastFavIcon.png",
+    "favicon": "/GridCastFavIcon.svg",
     "navigation": {
         "groups": [
             {
@@ -49,8 +49,8 @@
         }
     },
     "logo": {
-        "light": "/logo/GridCastBanner_Light.png",
-        "dark": "/logo/GridCastBanner_Dark.png"
+        "light": "/logo/GridCastBanner_Light.svg",
+        "dark": "/logo/GridCastBanner_Dark.svg"
     },
     "navbar": {
         "links": [
