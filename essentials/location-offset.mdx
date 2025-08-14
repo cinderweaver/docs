@@ -1,0 +1,25 @@
+---
+description: "Everything about the Offset input on the GameplayTask."
+title: "Location Offset"
+---
+
+## Offset
+
+This was added to allow you to shift the pattern's position around if needed or to do interesting things by combining it with the Offset Curve, that was one of the primary goals behind putting it in as an optional thing that can make the pattern a bit more interesting. You can even randomize it in a small range like 100-300 units and the origin of the pattern will move around randomly everytime the GameplayTask starts.
+
+Without the curve, this value is used flatly to add or remove from the Origin but with the curve, it's treated as a target value that can be reached.
+
+<Columns cols={2}>
+  <Card title="GridCast Processing Types" icon="microchip" href="/essentials/processing-types">
+    Detailed explaination of the different processing types.
+  </Card>
+  <Card title="GridCast Execution Types" icon="barcode" href="/essentials/execution-types">
+    Information on how different execution types work.
+  </Card>
+  <Card title="Rotation" icon="spinner" href="/essentials/rotation">
+    Everything about how rotation works so you can do exactly what you want.
+  </Card>
+   <Card title="Curves" icon="wave-sine" href="/essentials/curves">
+    Learn how the different curves work and how to make use of them.
+  </Card>
+</Columns>

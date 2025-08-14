@@ -1,0 +1,37 @@
+---
+title: "Curves"
+description: "There's three different curves that you can use to make the behavior of the pattern really interesting and this section should equip you with everything you need to know to make use of them."
+---
+
+<AccordionGroup>
+  <Accordion title="Delay Curve" icon="wave-sine">
+    All of the curves are good and interesting in their own ways with how they work and what they do but this curve is going to probably be the most useful one. It uses the formula below:
+
+    $BaseDelay + (BaseDelay * GetCurveValue(X));$
+
+    There X is the current step in the execution of the pattern.
+
+    Let's say you have a single-chain pattern with 3 circle links in it that are are going straight forward. With a BaseDelay of 0.25 and a linear curve, the second and third step will take a little longer to execute compared to the first one.
+  </Accordion>
+  <Accordion title="Offset Curve" icon="wave-square">
+    This is another _interesting_ curve. Using an Offset curve makes it so that the Offset value is treated as a target that can be reach. If you put in an Offset for (0,0, 250), with a linear curve, it means that every step will try to reach that 250 offset in Z with the last step being offset at 250. Changing the curve can change this behavior drastically.
+  </Accordion>
+  <Accordion title="Size Curve" icon="wave-triangle">
+    If you want your AoE to get bigger or smaller as the steps of the pattern progress, this is the curve you want to use. It is bound by the same rules as the other curves where it happens in steps. So if you use Link Parallel processing, the links will increase or decrease in size appropriately. If you use Chain Sequential processing, the entire chain will scale in size at once, this was done to give an in-built option to have effects that change size as the pattern progresses.
+  </Accordion>
+</AccordionGroup>
+
+<Columns cols={2}>
+  <Card title="GridCast Processing Types" icon="microchip" href="/essentials/processing-types">
+    Detailed explaination of the different processing types.
+  </Card>
+  <Card title="GridCast Execution Types" icon="barcode" href="/essentials/execution-types">
+    Information on how different execution types work.
+  </Card>
+  <Card title="Rotation" icon="spinner" href="/essentials/rotation">
+    Everything about how rotation works so you can do exactly what you want.
+  </Card>
+  <Card title="Location Offset" icon="grid" href="/essentials/location-offset">
+    Learn about the location offset and how it works with GridCast.
+  </Card>
+</Columns>

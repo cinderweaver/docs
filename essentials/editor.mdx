@@ -6,26 +6,72 @@ icon: "code"
 
 ## Button-row
 
+![Grid Cast Docs Button Row Pn](/images/editor/GridCast_Docs_ButtonRow.png)
+
 All the really important and useful things about the editor are at the top, part of the default button-row.
 
-## Add Chains
+<AccordionGroup>
+  <Accordion title="Add Chains" icon="link">
+    ![Grid Cast Docs Add Chain Pn](/images/editor/GridCast_Docs_AddChain.png)
 
-This is the button you press when you want to add a new chain to your pattern.
+    This is the button you press when you want to add a new chain to your pattern. Clicking will open the interface to specify a tag, a color and shape.
+  </Accordion>
+  <Accordion title="Refresh Grid" icon="rotate">
+    ![Grid Cast Docs Refresh Grid Pn](/images/editor/GridCast_Docs_RefreshGrid.png)
 
-## Refresh Grid
+    By default, all drawning for slate which is what makes the editor windows, happens on tick and I didn't like the idea of doing a lot of heavy math on tick so I am cache data and only making updates when necessary.\
+    \
+    A side effect of this approach is that when you move the Grid Editor around or change GridSize, you have to manually hit this Refresh Grid button to refresh the grid. It's a good workflow habit to decide your grid size before you do anything else.
+  </Accordion>
+  <Accordion title="Current Chain Selection" icon="list">
+    ![Grid Cast Docs Current Chain Pn](/images/editor/GridCast_Docs_CurrentChain.png)
 
-By default, all drawning for slate which is what makes the editor windows, happens on tick and I didn't like the idea of doing a lot of heavy math on tick so I am cache data and only making updates when necessary.\
-\
-A side effect of this approach is that when you move the Grid Editor around or change GridSize, you have to manually hit this Refresh Grid button to refresh the grid. It's a good workflow habit to decide your grid size before you do anything else.
+    This dropdown uses the GameplayTags that you specify to identify a chain in a list to let you pick which chain should be currently edited.
+  </Accordion>
+  <Accordion title="Edit Current Chain" icon="pencil">
+    ![Grid Cast Docs Edit Current Chain Pn](/images/editor/GridCast_Docs_EditCurrentChain.png)
 
-## Current Chain Selection
+    This allows you to edit the current chain. When you click it, a pop will appear letting you change the shape and color of the currently selected chain.
 
-This dropdown uses the GameplayTags that you specify to identify a chain in a list to let you pick which chain should be currently edited.
+    <Warning>
+      If you change the shape, you'll lose all the links you've drawn for the shape since they can't be transferred between different shape types\!
+    </Warning>
+  </Accordion>
+  <Accordion title="Randomize Current Chain" icon="shuffle">
+    ![Grid Cast Docs Randomize Chain Pn](/images/editor/GridCast_Docs_RandomizeChain.png)
 
-## Clear Current Chain
+    It's a simple randomization feature that was added to speed up prototyping with the plugin, it lets you add a random number of links to a chain by specifying between a min and maximum number of them. The maximum number can't exceed the maximum number of cells on the grid.
 
-Want to empty the current chain completely? Just click this button and it'll be reset.
+    For example, a Grid of 7 can at max have 49 links but it's unlikely for a single chain to have that many elements.
+  </Accordion>
+  <Accordion title="Clear Current Chain" icon="trash">
+    ![Grid Cast Docs Clear Current Chain Pn](/images/editor/GridCast_Docs_ClearCurrentChain.png)
 
-## Clear All Chains
+    Want to empty the current chain completely? Just click this button and it'll be reset.
+  </Accordion>
+  <Accordion title="Clear All Chains" icon="eraser">
+    ![Grid Cast Docs Clear All Chains Pn](/images/editor/GridCast_Docs_ClearAllChains.png)
 
-Does that Clear Current Chain does but for all the chains at once, very handy if you want to completely start over or if you are copy pasting your patterns after adding the chain and just want to change what the pattern looks like.
+    Does what Clear Current Chain does but for all the chains at once, very handy if you want to completely start over or if you are copy pasting your patterns after adding the chain and just want to change what the pattern looks like.
+  </Accordion>
+  <Accordion title="Delete Current Chain" icon="shredder">
+    ![Grid Cast Docs Delete Chain Pn](/images/editor/GridCast_Docs_DeleteChain.png)
+
+    Deletes the currently selected chain from the pattern, you will have to add it again.
+  </Accordion>
+</AccordionGroup>
+
+<Columns cols={2}>
+  <Card title="GridCast Processing Types" icon="microchip" href="/essentials/processing-types">
+    Detailed explaination of the different processing types.
+  </Card>
+  <Card title="GridCast Execution Types" icon="barcode" href="/essentials/execution-types">
+    Information on how different execution types work.
+  </Card>
+  <Card title="Rotation" icon="spinner" href="/essentials/rotation">
+    Everything about how rotation works so you can do exactly what you want.
+  </Card>
+  <Card title="Location Offset" icon="grid" href="/essentials/location-offset">
+    Learn about the location offset and how it works with GridCast.
+  </Card>
+</Columns>

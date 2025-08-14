@@ -1,59 +1,33 @@
 ---
-title: 'Images and embeds'
-description: 'Add image, video, and other HTML elements'
-icon: 'image'
+title: "GridCast Shape Types"
+description: "There's two shape types that are included with GridCast, there's more on the roadmap of updates already!"
+icon: "image"
 ---
 
-<img
-  style={{ borderRadius: '0.5rem' }}
-  src="https://mintlify-assets.b-cdn.net/bigbend.jpg"
-/>
+<AccordionGroup>
+  <Accordion title="1. Circle" icon="circle">
+    Circle is the simplest shape and it's used to represent single point AOE like a location where lightening strikes down or a meteor falls, or a spike comes out of the ground. You get the idea. It is your generic standard "on the ground area of effect" type of thing which would be enough for most of your usecases.
 
-## Image
+    When drawing on the grid, you simply have to click one to draw and click again to remove the circle from the grid.
+  </Accordion>
+  <Accordion title="2. Lines" icon="arrow-up-right" iconType="regular">
+    Lines are the second shape type avaialble in GridCast. It's made up of two locations, LineStart and LineEnd. The use case for this was things like laser beams, projectiles, any kind of gameplay effects that travel on a straight path so they can be used for all kinds of things.
 
-### Using Markdown
+    When drawing on the grid, first click selects a starting point and the next one will select the end point. To remove the Line, you have to repeat the process. It sounds tedious but different lines on the grid can either share a starting point or ending point.
+  </Accordion>
+</AccordionGroup>
 
-The [markdown syntax](https://www.markdownguide.org/basic-syntax/#images) lets you add images using the following code
-
-```md
-![title](/path/image.jpg)
-```
-
-Note that the image file size must be less than 5MB. Otherwise, we recommend hosting on a service like [Cloudinary](https://cloudinary.com/) or [S3](https://aws.amazon.com/s3/). You can then use that URL and embed.
-
-### Using embeds
-
-To get more customizability with images, you can also use [embeds](/writing-content/embed) to add images
-
-```html
-<img height="200" src="/path/image.jpg" />
-```
-
-## Embeds and HTML elements
-
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/4KzFe50RQkQ"
-  title="YouTube video player"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-  style={{ width: '100%', borderRadius: '0.5rem' }}
-></iframe>
-
-<br />
-
-<Tip>
-
-Mintlify supports [HTML tags in Markdown](https://www.markdownguide.org/basic-syntax/#html). This is helpful if you prefer HTML tags to Markdown syntax, and lets you create documentation with infinite flexibility.
-
-</Tip>
-
-### iFrames
-
-Loads another HTML page within the document. Most commonly used for embedding videos.
-
-```html
-<iframe src="https://www.youtube.com/embed/4KzFe50RQkQ"> </iframe>
-```
+<Columns cols={2}>
+  <Card title="GridCast Processing Types" icon="microchip" href="/essentials/processing-types">
+    Detailed explaination of the different processing types.
+  </Card>
+  <Card title="GridCast Execution Types" icon="barcode" href="/essentials/execution-types">
+    Information on how different execution types work.
+  </Card>
+  <Card title="Rotation" icon="spinner" href="/essentials/rotation">
+    Everything about how rotation works so you can do exactly what you want.
+  </Card>
+  <Card title="Location Offset" icon="grid" href="/essentials/location-offset">
+    Learn about the location offset and how it works with GridCast.
+  </Card>
+</Columns>

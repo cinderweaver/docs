@@ -24,7 +24,9 @@
                     "essentials/editor",
                     "essentials/execution-types",
                     "essentials/processing-types",
-                    "essentials/shape-types"
+                    "essentials/shape-types",
+                    "essentials/location-offset",
+                    "essentials/rotation"
                 ]
             }
         ],
@@ -33,7 +35,7 @@
                 {
                     "anchor": "Fab",
                     "href": "https://www.fab.com/",
-                    "icon": "shopping-bag"
+                    "icon": "shoppingbag"
                 },
                 {
                     "anchor": "Community",
@@ -43,7 +45,7 @@
                 {
                     "anchor": "Changelog",
                     "href": "https://mintlify.com/blog",
-                    "icon": "logs"
+                    "icon": "list"
                 }
             ]
         }
