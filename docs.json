@@ -4,11 +4,11 @@
     "name": "GridCast Documentation",
     "colors": {
         "primary": "#E25822",
-        "light": "#9CA3AF",
+        "light": "#E25822",
         "dark": "#1F2937"
     },
     "darkMode": true,
-    "favicon": "/favicon.svg",
+    "favicon": "/GridCastFavIcon.png",
     "navigation": {
         "groups": [
             {
@@ -31,26 +31,26 @@
         "global": {
             "anchors": [
                 {
-                    "anchor": "Documentation",
-                    "href": "https://mintlify.com/docs",
-                    "icon": "book-open-cover"
+                    "anchor": "Fab",
+                    "href": "https://www.fab.com/",
+                    "icon": "shopping-bag"
                 },
                 {
                     "anchor": "Community",
-                    "href": "https://mintlify.com/community",
+                    "href": "https://discord.gg/cinderweaver",
                     "icon": "discord"
                 },
                 {
-                    "anchor": "Blog",
+                    "anchor": "Changelog",
                     "href": "https://mintlify.com/blog",
-                    "icon": "newspaper"
+                    "icon": "logs"
                 }
             ]
         }
     },
     "logo": {
-        "light": "/logo/light.svg",
-        "dark": "/logo/dark.svg"
+        "light": "/logo/GridCastBanner_Light.png",
+        "dark": "/logo/GridCastBanner_Dark.png"
     },
     "navbar": {
         "links": [
