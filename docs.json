@@ -3,9 +3,9 @@
     "theme": "mint",
     "name": "GridCast Documentation",
     "colors": {
-        "primary": "#9CA3AF",
-        "light": "#1F2937",
-        "dark": "#F97F51"
+        "primary": "#E25822",
+        "light": "#9CA3AF",
+        "dark": "#1F2937"
     },
     "darkMode": true,
     "favicon": "/favicon.svg",
