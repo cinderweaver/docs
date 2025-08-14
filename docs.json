@@ -22,11 +22,12 @@
                 "group": "Essentials",
                 "pages": [
                     "essentials/editor",
-                    "essentials/execution-types",
                     "essentials/processing-types",
+                    "essentials/execution-types",
                     "essentials/shape-types",
+                    "essentials/rotation",
                     "essentials/location-offset",
-                    "essentials/rotation"
+                    "essentials/curves"
                 ]
             }
         ],
